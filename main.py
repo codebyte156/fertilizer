@@ -23,7 +23,7 @@ def predict():
     phosp = request.form.get('phos')
     input = [int(temp),int(humi),int(mois),int(soil),int(crop),int(nitro),int(pota),int(phosp)]
 
-    res = ferti.classes_[model.predict([input])]
+    res = [ferti.predict([input])]
 
     return render_template('index.html',x = ('Predicted Fertilizer is {}'.format(res)))
 
